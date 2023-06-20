@@ -32,9 +32,9 @@ export interface StyledFlexChildPropsType {
 }
 
 const setStyle = ({
-	flex: flex,
-	fDirection: fDirection,
-	fWrap: fWrap,
+	flex,
+	fDirection,
+	fWrap,
 	vAlign,
 	hAlign,
 	gap,
