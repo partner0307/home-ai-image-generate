@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 
 export const MainContainer = styled.main`
     padding: 3rem 200px 2rem;
-    height: 100vh;
+    height: 94vh;
     overflow: hidden;
 
     @media (max-width: 600px) {
