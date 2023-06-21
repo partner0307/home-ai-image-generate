@@ -36,8 +36,8 @@ export const InputBoard = styled.div`
     transform: translate(0, -50%);
     width: 100%;
     height: 100%;
-    border: 1px solid #FFFFFF;
-    background: ${GV('bg-sub')};
+    border: 1px solid ${GV('primary')};
+    background: none;
     border-radius: 0.5rem;
 `
 

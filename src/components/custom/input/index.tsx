@@ -40,7 +40,7 @@ export const Textarea: React.FC<TextareaPropsType> = ({
             {label && (<InputLabel>{label}</InputLabel>)}
             <InputContent>
                 <InputWrapper>
-                    <StyledTextarea as="textarea" rows={5} {...rest} />
+                    <StyledTextarea as="textarea" rows={3} {...rest} />
                     {helpSide}
                 </InputWrapper>
                 <InputBoard />

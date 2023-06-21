@@ -23,7 +23,7 @@ const MultiForm: React.FC<MultiFormPropsType> = ({
             {items.map(({ caption, label }, key: number) => (
                 <React.Fragment key={key}>
                     {key !== 0 && (
-                        <Line len={items.length} />
+                        <Line len={items.length} isActive={(activeIndex === null) ? (activeIndex === null) : (activeIndex >= key)} />
                     ) }
                     <Flex $style={{
                         fDirection: "column",

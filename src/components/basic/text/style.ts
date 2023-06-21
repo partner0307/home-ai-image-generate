@@ -7,6 +7,7 @@ export interface InlineTextPropsType {
     weight?:			string
     mb?:				string
     align?:				'left' | 'center' | 'right'
+	tcase?:				'uppercase' | 'lowercase' | 'capitalize'
 }
 
 type QueryType = { [key: string]: Partial<InlineTextPropsType> };
@@ -20,14 +21,16 @@ const setStyle = ({
     size,
     weight,
     mb,
-    align
+    align,
+	tcase
 }: Partial<InlineTextPropsType>) => {
 	return `
-		${ color		? `color:				var(--${color});` 		: ``}
+		${ color		? `color:				${color};` 		: ``}
 		${ size			? `font-size:			${size};` 				: ``}
 		${ weight		? `font-weight:			${weight};` 			: ``}
 		${ mb			? `margin-bottom:		${mb};` 				: ``}
 		${ align		? `text-align:			${align};` 				: ``}
+		${ tcase			? `text-transform:		${tcase};` 				: ``}
 	`
 }
 

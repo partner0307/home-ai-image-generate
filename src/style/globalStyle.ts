@@ -311,24 +311,24 @@ const GlobalStyle = createGlobalStyle`
 	.swiper {
 		max-width: 100%;
 		height: 100%;
-	  }
-	  .swiper-slide {
+	}
+	.swiper-slide {
 		text-align: center;
 		font-size: 18px;
-	  
+		
 		/* Center slide text vertically */
 		display: flex;
 		justify-content: center;
 		align-items: center;
-	  }
-	  .swiper-button-prev, .swiper-button-next{
-			color:#4CAF50;
-	  }
-	  .swiper-pagination-bullet-active {
+	}
+	.swiper-button-prev, .swiper-button-next{
+		color:#4CAF50;
+	}
+	.swiper-pagination-bullet-active {
 		background:#4CAF50 !important;
-	  }
+	}
 
-	  #root {
+	#root {
 		height: 100vh;
 		overflow: hidden;
 
@@ -336,7 +336,10 @@ const GlobalStyle = createGlobalStyle`
 			height: auto;
 			overflow: auto;
 		}
-	  }
+	}
+	.uploader__widget-base--draggable {
+		border: 0.1rem dashed #66d7eb
+	}
 `
 
 export default GlobalStyle;

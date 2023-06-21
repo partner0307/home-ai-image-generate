@@ -1,14 +1,20 @@
 import React, { useState } from "react";
 import MultiForm from "components/pages/multiform";
 import Step1Page from "./step1";
-import Step2Page from "./step2";
 import RootPage from "./root";
+import GeneratePage from "../generate";
+import { Flex } from "components/basic";
+import { Container } from "./style";
 // import { Flex, Heading, P } from "components/basic";
 
 const MultiFormPage = () => {
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
     return (
-        <React.Fragment>
+        <Flex $style={{
+            flex: "1",
+            h: "100%",
+            fDirection: "column"
+        }}>
             {/* {activeIndex === null ? (
                 <Flex $style={{
                     fDirection: "column",
@@ -42,16 +48,21 @@ const MultiFormPage = () => {
                 }]}
                 onChange={() => {}}
             />
-            {activeIndex === null && (
-                <RootPage next={() => setActiveIndex(0)} />
-            )}
-            {activeIndex === 0 && (
-                <Step1Page next={() => setActiveIndex(1)} />
-            )}
-            {activeIndex === 1 && (
-                <Step2Page next={() => setActiveIndex(2)} />
-            )}
-        </React.Fragment>
+            <Container>
+                {activeIndex === null && (
+                    <RootPage next={() => setActiveIndex(0)} />
+                )}
+                {(activeIndex === 0 || activeIndex === 1) && (
+                    <Step1Page next1={() => setActiveIndex(1)} next2={() => setActiveIndex(2)} />
+                )}
+                {/* {activeIndex === 1 && (
+                    <Step1Page next={() => setActiveIndex(2)} />
+                )} */}
+                {activeIndex === 2 && (
+                    <GeneratePage />
+                )}
+            </Container>
+        </Flex>
     )
 }
 

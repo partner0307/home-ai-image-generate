@@ -1,7 +1,9 @@
 import { styled } from "styled-components";
 
 export const MainContainer = styled.main`
-    padding: 3rem 200px 2rem;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 200px 0rem;
     height: 94vh;
     overflow: hidden;
 

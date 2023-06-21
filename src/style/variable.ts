@@ -1,8 +1,9 @@
 const variables = {
     'primary': '#66D7EB',
-    'primary-opacity': '#66D7EB',
+    'primary-opacity': '#66D7EB33',
     'danger': '#E03F3F',
     'dark': '#0E1E2B',
+    'secondary': '#41748D',
 
     'bg': '#0E1E2B',
     'bg-sub': '#0E1E2BCC',

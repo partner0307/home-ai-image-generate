@@ -19,6 +19,7 @@ interface InlineGridPropsType {
 	maxH?:						string
 	columns?:					string
 	rows?:						string
+	overflow?:					string
 }
 
 type QueryType = { [key: string]: InlineGridPropsType };
@@ -43,6 +44,7 @@ const setStyle = ({
 	h,
 	minH,
 	maxH,
+	overflow,
 	columns,
 	rows
 }: InlineGridPropsType) => {
@@ -62,6 +64,7 @@ const setStyle = ({
 		${h                 ? `height:				${h};`              : ``}
 		${minH              ? `max-height:			${minH};`           : ``}
 		${maxH              ? `max-height:			${maxH};`           : ``}
+		${overflow          ? `overflow:			${overflow};`           : ``}
 		${columns           ? `grid-template-columns: repeat(${columns}, minmax(0, 1fr));` : ``}
 		${rows             	? `grid-template-rows: repeat(${rows}, minmax(0, 1fr));` : ``}
 	`

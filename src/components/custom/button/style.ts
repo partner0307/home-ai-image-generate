@@ -16,7 +16,7 @@ export const StyledButton = styled.button<StyledButtonType>`
     align-items: center;
     justify-content: center;
     gap: 0.3rem;
-    border-radius: 0.5rem;
+    border-radius: 0.25rem;
     font-size: ${GV("font-size")};
     transition: all ease-in-out .1s;
 
