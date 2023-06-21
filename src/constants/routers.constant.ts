@@ -3,6 +3,8 @@ const _ROUTERS = {
     howwework: "/how-work",
     pricing: "/pricing",
     logout: "/logout",
+    signup: '/signup',
+    conditions: "/conditions",
     multiform: "/multiform"
 }
 

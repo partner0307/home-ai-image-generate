@@ -1,9 +1,10 @@
 import _ROUTERS from "constants/routers.constant";
 import PublicLayout from "pages/public";
-import GeneratePage from "pages/public/generate";
 import MultiFormPage from "pages/public/multiform";
 import OverviewPage from "pages/public/overview";
 import PricingPage from "pages/public/pricing";
+import Conditions from 'pages/public/conditions';
+import Signup from 'pages/public/signup';
 import { createBrowserRouter } from "react-router-dom";
 
 const routers = createBrowserRouter([
@@ -26,6 +27,14 @@ const routers = createBrowserRouter([
             {
                 path: _ROUTERS.logout,
                 element: <OverviewPage />
+            },
+            {
+                path: _ROUTERS.signup,
+                element: <Signup />
+            },
+            {
+                path: _ROUTERS.conditions,
+                element: <Conditions />
             }
         ],
     },

@@ -85,6 +85,12 @@ const Step1Page: React.FC<Step1PagePropsType> = ({
 }) => {
     const [quizIndex, setQuizIndex] = useState(0);
     const [checkList, setCheckList] = useState<boolean[]>(Array(ImageArray.length).fill(false));
+    const [isPublished, setIsPublished] = useState(false);
+    const [isRecommend, setIsRecommend] = useState(false);
+    const [isConsidered, setIsConsidered] = useState(false);
+    const [walls, setWalls] = useState(false);
+    const [furniture, setFurniture] = useState(false);
+    const [lighting, setLighting] = useState(false);
 
     const handleNext = () => {
         setQuizIndex(quizIndex + 1);
@@ -221,7 +227,7 @@ const Step1Page: React.FC<Step1PagePropsType> = ({
                     <Flex $style={{
                         h: "30px"
                     }}>
-                        <Checkbox 
+                        <Checkbox
                             label={(<InlineText>Design can be published publicly (Pro)</InlineText>)}
                             $style={{
                                 w: "16px",
@@ -230,6 +236,8 @@ const Step1Page: React.FC<Step1PagePropsType> = ({
                                 initBorder: GV("primary"),
                                 radius: "4px"
                             }}
+                            isChecked={isPublished}
+                            onChange={() => setIsPublished(!isPublished)}
                         />
                     </Flex>
                     <Flex $style={{
@@ -244,6 +252,8 @@ const Step1Page: React.FC<Step1PagePropsType> = ({
                                 initBorder: GV("primary"),
                                 radius: "4px"
                             }}
+                            isChecked={isRecommend}
+                            onChange={() => setIsRecommend(!isRecommend)}
                         />
                     </Flex>
                     <Flex $style={{
@@ -262,6 +272,8 @@ const Step1Page: React.FC<Step1PagePropsType> = ({
                                 initBorder: GV("primary"),
                                 radius: "4px"
                             }}
+                            isChecked={isConsidered}
+                            onChange={() => setIsConsidered(!isConsidered)}
                         />
                         <Dropdown
                             container={() => (
@@ -298,6 +310,8 @@ const Step1Page: React.FC<Step1PagePropsType> = ({
                                 initBorder: GV("primary"),
                                 radius: "4px"
                             }}
+                            isChecked={walls}
+                            onChange={() => setWalls(!walls)}
                         />
                         <Checkbox 
                             label={(<InlineText>Furniture</InlineText>)}
@@ -308,6 +322,8 @@ const Step1Page: React.FC<Step1PagePropsType> = ({
                                 initBorder: GV("primary"),
                                 radius: "4px"
                             }}
+                            isChecked={furniture}
+                            onChange={() => setFurniture(!furniture)}
                         />
                         <Checkbox 
                             label={(<InlineText>Lighting</InlineText>)}
@@ -318,6 +334,8 @@ const Step1Page: React.FC<Step1PagePropsType> = ({
                                 initBorder: GV("primary"),
                                 radius: "4px"
                             }}
+                            isChecked={lighting}
+                            onChange={() => setLighting(!lighting)}
                         />
                     </Flex>
                 </Flex>

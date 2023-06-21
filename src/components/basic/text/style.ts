@@ -30,7 +30,7 @@ const setStyle = ({
 		${ weight		? `font-weight:			${weight};` 			: ``}
 		${ mb			? `margin-bottom:		${mb};` 				: ``}
 		${ align		? `text-align:			${align};` 				: ``}
-		${ tcase			? `text-transform:		${tcase};` 				: ``}
+		${ tcase		? `text-transform:		${tcase};` 				: ``}
 	`
 }
 

@@ -1,4 +1,4 @@
-import { Flex, Heading, P, Span } from "components/basic";
+import { Flex, Heading, P, Span, Link } from "components/basic";
 import { Button, Input } from "components/custom";
 import { GV } from "utils/style.util";
 import { ContactForm, HomeTitle, ImageWrapper, LogoWrapper } from "./style";
@@ -58,7 +58,7 @@ const OverviewPage = () => {
                     <ContactForm>
                         <Flex $style={{
                             fDirection: "column",
-                            gap: "1.5rem"
+                            gap: "0.5rem"
                         }}>
                             <P>Start your home interior design with rendro.ai</P>
                             <Flex $style={{
@@ -76,9 +76,23 @@ const OverviewPage = () => {
                                 <Input value="" />
                             </Flex>
                         </Flex>
+                        <Span $style={{
+                            size: '0.8rem',
+                            color: GV('primary')
+                        }}>Forgot password ?</Span>
                         <Button $style={{
                             bg: GV("primary")
                         }}>Sign In</Button>
+                        <Flex $style={{
+                            hAlign: 'center'
+                        }}>
+                            <Span $style={{
+                                size: '0.8rem',
+                            }}>Don't have an account? <Link $style={{
+                                color: GV('primary')
+                            }} to={'/signup'}>Sign up</Link>
+                            </Span>
+                        </Flex>
                     </ContactForm>
                 </Flex>
                 <ImageWrapper>
