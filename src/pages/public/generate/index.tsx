@@ -12,7 +12,8 @@ const GeneratePage = () => {
     return (
         <Flex $style={{
             fDirection: "column",
-            h: "100%"
+            h: "100%",
+            w: "100%"
         }}>
             <Flex $style={{
                 fDirection: 'column',

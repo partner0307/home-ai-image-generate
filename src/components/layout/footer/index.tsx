@@ -14,7 +14,7 @@ const Footer = () => {
                 <P>Rendro@info.com</P>
                 <Flex $style={{
                     fDirection: 'row',
-                    gap: '0.5rem'
+                    gap: '0.75rem'
                 }}>
                     <Icon icon="Youtube" />
                     <Icon icon="Discord" />

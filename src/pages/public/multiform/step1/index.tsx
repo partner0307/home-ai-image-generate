@@ -5,9 +5,8 @@ import { Uploader } from 'uploader';
 import { UploadDropzone } from 'react-uploader';
 
 import Image1 from 'assets/1.png';
-import { CheckboxContainer, Select, Option, Tile, ImageBoxWrapper, InlineText } from "./style";
+import { CheckboxContainer, Tile, ImageBoxWrapper, InlineText } from "./style";
 import { GV } from "utils/style.util";
-import CheckboxItem from "components/pages/checkbox";
 import Dropdown from "components/custom/dropdown";
 
 const uploader = Uploader({ apiKey: 'public_12a1yMA3Y7LAQka2wJSTDyFgytZF' });
@@ -24,7 +23,7 @@ const uploaderOptions = {
 }
 
 type Step1PagePropsType = {
-    next1: any
+    next1: any,
     next2: any
 }
 
@@ -327,7 +326,7 @@ const Step1Page: React.FC<Step1PagePropsType> = ({
                 }}>
                     <Button $style={{
                         bg: quizIndex < 9 ? GV('primary-opacity') : GV('primary')
-                    }} disabled={quizIndex < 9 ? true : false} onClick={() => {}}>Generate Your Home</Button>
+                    }} disabled={quizIndex < 9 ? true : false} onClick={() => {next2()}}>Generate Your Home</Button>
                 </Flex>
             </Flex>
             {/* <Button onClick={next}>Next</Button> */}

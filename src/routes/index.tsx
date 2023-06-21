@@ -25,7 +25,7 @@ const routers = createBrowserRouter([
             },
             {
                 path: _ROUTERS.logout,
-                element: <GeneratePage />
+                element: <OverviewPage />
             }
         ],
     },

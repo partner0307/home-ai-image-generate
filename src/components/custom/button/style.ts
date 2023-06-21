@@ -18,6 +18,7 @@ export const StyledButton = styled.button<StyledButtonType>`
     gap: 0.3rem;
     border-radius: 0.25rem;
     font-size: ${GV("font-size")};
+    outline: none;
     transition: all ease-in-out .1s;
 
     ${({ w }) => w ? `width: ${w};` : ``}

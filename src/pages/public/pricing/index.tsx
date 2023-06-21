@@ -75,8 +75,7 @@ const PricingPage = () => {
                         hAlign: "center"
                     }}>
                         <Button $style={{
-                            bg: 'transparent',
-                            border: GV('primary')
+                            bg: GV('primary')
                         }}>Buy now</Button>
                     </Flex>
                 </CardWrapper>
