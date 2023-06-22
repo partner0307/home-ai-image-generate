@@ -3,6 +3,8 @@ Let's make new one world with shinobi.
 
 This is project for only front-end. The website project is to generate better home based on the home image user uploaded.
 
+<a href="https://app.daily.dev/ItamiWorld"><img src="https://api.daily.dev/devcards/dab7f860f7394fc0803744e36b99fc39.png?r=rb6" width="200" align='right' alt="Tadao Minami's Dev Card"/></a>
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
