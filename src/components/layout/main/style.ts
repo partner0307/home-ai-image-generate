@@ -6,7 +6,7 @@ export const MainContainer = styled.main<{background: string}>`
     display: flex;
     flex-direction: column;
     padding: 3rem 200px 0rem;
-    height: 100vh;
+    height: 100%;
     padding-bottom: 4rem;
     overflow: hidden;
 

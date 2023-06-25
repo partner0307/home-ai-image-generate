@@ -3,8 +3,8 @@ import { Button, Input } from "components/custom";
 import { GV } from "utils/style.util";
 import { ContactForm, HomeTitle, ImageWrapper, LogoWrapper } from "./style";
 
-import Image1 from "assets/1.png"
-import Image2 from "assets/2.png"
+import Image1 from "assets/overview/1.png"
+import Image2 from "assets/overview/2.png"
 
 import LogoImg from "assets/logo.png";
 import ReactCompareImage from "react-compare-image";
@@ -48,7 +48,8 @@ const OverviewPage = () => {
                                 }
                             }}>
                                 <Heading level={1}>Imagine Design Feel Good</Heading>
-                                <P>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</P>
+                                <P>
+Get ready for an amazing adventure with Rendro! By snapping a picture of your room, this incredible app reveals your personal style and creates stunning pictures of your space that will leave you amazed.</P>
                                 <Button $style={{
                                     bg: GV("primary")
                                 }}>Get Started</Button>
@@ -60,7 +61,7 @@ const OverviewPage = () => {
                             fDirection: "column",
                             gap: "0.5rem"
                         }}>
-                            <P>Start your home interior design with rendro.ai</P>
+                            <P>Start your home interior design with Rendro.ca</P>
                             <Flex $style={{
                                 fDirection: "column",
                                 gap: "0.5rem"
@@ -99,8 +100,8 @@ const OverviewPage = () => {
                     <ReactCompareImage
                         leftImage={Image1}
                         rightImage={Image2}
-                        leftImageCss={{ width: '100%', height: '100%', borderRadius: '5px 0 0 5px', objectFit: 'cover' }}
-                        rightImageCss={{ width: '100%', height: '100%', borderRadius: '0 5px 5px 0', objectFit: 'cover' }}
+                        leftImageCss={{ borderRadius: '5px 0 0 5px' }}
+                        rightImageCss={{ borderRadius: '0 5px 5px 0' }}
                         aspectRatio='wider'
                     />
                 </ImageWrapper>

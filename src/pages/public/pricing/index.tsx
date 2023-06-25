@@ -37,16 +37,12 @@ const PricingPage = () => {
                     color: GV('primary-opacity')
                 }}>PREMIUM PRICING PLANS</Span>
                 <Heading level={3}>Choose the plan that fits your needs!</Heading>
-                <Span $style={{
-                    color: GV("secondary"),
-                    tcase: "uppercase"
-                }}>Get 3 Free Months</Span>
             </Flex>
             <Flex $style={{
                 fDirection: 'row',
                 hAlign: 'center',
                 vAlign: 'flex-end',
-                gap: '2rem',
+                gap: '1rem',
                 queries: {
                     768: {
                         fDirection: "column",

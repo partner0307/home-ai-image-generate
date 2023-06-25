@@ -8,7 +8,11 @@ import { Flex } from "components/basic";
 import { Button } from "components/custom";
 import { GV } from "utils/style.util";
 
-const GeneratePage = () => {
+type GeneratePagePropsType = {
+    prev: any;
+}
+
+const GeneratePage: React.FC<GeneratePagePropsType> = ({ prev }) => {
     return (
         <Flex $style={{
             fDirection: "column",
@@ -16,6 +20,7 @@ const GeneratePage = () => {
             w: "100%"
         }}>
             <Flex $style={{
+                flex: '1',
                 fDirection: 'column',
                 gap: '3rem'
             }}>
@@ -23,8 +28,8 @@ const GeneratePage = () => {
                     <ReactCompareImage
                         leftImage={Image1}
                         rightImage={Image2}
-                        leftImageCss={{ width: '100%', height: '100%', borderRadius: '5px 0 0 5px', objectFit: 'cover' }}
-                        rightImageCss={{ width: '100%', height: '100%', borderRadius: '0 5px 5px 0', objectFit: 'cover' }}
+                        leftImageCss={{ borderRadius: '5px 0 0 5px' }}
+                        rightImageCss={{ borderRadius: '0 5px 5px 0' }}
                         aspectRatio='wider'
                     />
                 </ImageWrapper>
@@ -36,7 +41,7 @@ const GeneratePage = () => {
                 }}>
                     <Button $style={{
                         bg: GV('dark')
-                    }}>Try Again</Button>
+                    }} onClick={prev}>Try Again</Button>
                     <Button $style={{
                         bg: GV('primary')
                     }}>Share</Button>

@@ -59,7 +59,7 @@ const MultiFormPage = () => {
                     <Step1Page next={() => setActiveIndex(2)} />
                 )} */}
                 {activeIndex === 2 && (
-                    <GeneratePage />
+                    <GeneratePage prev={() => setActiveIndex(1)} />
                 )}
             </Container>
         </Flex>

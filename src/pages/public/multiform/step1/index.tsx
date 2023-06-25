@@ -1,10 +1,12 @@
 import { Flex, Grid, P, Span } from "components/basic";
 import { Button, Checkbox, Image, Textarea } from "components/custom";
-import React, { useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import { Uploader } from 'uploader';
 import { UploadDropzone } from 'react-uploader';
 
 import Image1 from 'assets/1.png';
+import Image2 from 'assets/2.png';
+import Image3 from 'assets/3.png';
 import { CheckboxContainer, Tile, ImageBoxWrapper, InlineText } from "./style";
 import { GV } from "utils/style.util";
 import Dropdown from "components/custom/dropdown";
@@ -47,11 +49,11 @@ const ImageArray = [
     },
     {
         index: '2',
-        image: Image1,
+        image: Image2,
     },
     {
         index: '3',
-        image: Image1,
+        image: Image3,
     },
     {
         index: '4',
@@ -59,15 +61,15 @@ const ImageArray = [
     },
     {
         index: '5',
-        image: Image1,
+        image: Image3,
     },
     {
         index: '6',
-        image: Image1,
+        image: Image2,
     },
     {
         index: '7',
-        image: Image1,
+        image: Image2,
     },
     {
         index: '8',
@@ -75,7 +77,7 @@ const ImageArray = [
     },
     {
         index: '9',
-        image: Image1,
+        image: Image3,
     }
 ];
 
@@ -85,6 +87,7 @@ const Step1Page: React.FC<Step1PagePropsType> = ({
 }) => {
     const [quizIndex, setQuizIndex] = useState(0);
     const [checkList, setCheckList] = useState<boolean[]>(Array(ImageArray.length).fill(false));
+    const [prompt, setPrompt] = useState('');
     const [isPublished, setIsPublished] = useState(false);
     const [isRecommend, setIsRecommend] = useState(false);
     const [isConsidered, setIsConsidered] = useState(false);
@@ -124,7 +127,7 @@ const Step1Page: React.FC<Step1PagePropsType> = ({
                 w: '50%',
                 h: "100%",
                 overflow: "hidden",
-                minW: "300px"
+                minW: "400px"
             }}>
                 <P>{questions[quizIndex]}</P>
                 <Flex $style={{
@@ -139,14 +142,14 @@ const Step1Page: React.FC<Step1PagePropsType> = ({
                         <Grid $style={{
                             columns: "3",
                             gap: "0.7rem",
-                            queries: {
-                                1440: {
-                                    columns : "2"
-                                },
-                                1200: {
-                                    columns: "1"
-                                }
-                            }
+                            // queries: {
+                            //     1440: {
+                            //         columns : "2"
+                            //     },
+                            //     1200: {
+                            //         columns: "1"
+                            //     }
+                            // }
                         }}>
                             {ImageArray.map((item, key) => (
                                 <Tile key={key}>
@@ -172,21 +175,20 @@ const Step1Page: React.FC<Step1PagePropsType> = ({
                 flex: "1",
                 fDirection: 'column',
                 hAlign: "space-between",
-                h: "100%",
                 gap: '1rem'
             }}>
-                <P>You almost done. Upload the image and make your own home.</P>
                 <Flex $style={{
                     fDirection: 'column',
                     gap: '0.5rem'
                 }}>
+                    <P>Upload the image and Design your home.</P>
                     <UploadDropzone
                         uploader={uploader}
                         options={uploaderOptions}
                         onUpdate={files => console.log(files.map(x => x.fileUrl).join("\n"))}
                         onComplete={files => alert(files.map(x => x.fileUrl).join("\n"))}
                         width="100%"
-                        height="255px"
+                        height="190px"
                     />
                     <Flex $style={{
                         fDirection: 'row',
@@ -223,7 +225,7 @@ const Step1Page: React.FC<Step1PagePropsType> = ({
                             initialLabel="Choose your interior style"
                         />
                     </Flex>
-                    <Textarea value="" label='' placeholder="Type your prompt here..." />
+                    <Textarea value={prompt} onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setPrompt(e.target.value)} label='' placeholder="Type your prompt here..." />
                     <Flex $style={{
                         h: "30px"
                     }}>

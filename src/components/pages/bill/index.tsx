@@ -31,7 +31,7 @@ const Bill: React.FC<BillPropsType> = ({ items }) => {
             hAlign: 'center',
             gap: '1rem'
         }}>
-            {items.map(p => <Item text={p} />)}
+            {items.map(p => <Item text={p} key={p} />)}
         </Flex>
     </ItemWrapper>
 }

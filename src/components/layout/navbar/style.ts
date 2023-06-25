@@ -75,7 +75,7 @@ export const StyledNavItem = styled(Link)`
   }
 
   &:hover {
-    box-shadow: 0 0 10px rgba(255, 255, 255, .7);
+    box-shadow: 0 0 15px ${GV('primary-opacity')};
     > span {
       padding-left: 0.5rem;
       width: 100px;

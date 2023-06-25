@@ -1,8 +1,11 @@
 import React from "react";
 import { Button, Image } from "components/custom";
-import { Flex, Heading, P } from "components/basic";
+import { Flex, Heading, P, Span } from "components/basic";
 
-import Image1 from 'assets/1.png';
+import Image1 from 'assets/compare/1.png';
+import Image2 from 'assets/compare/2.png';
+import Image3 from 'assets/compare/3.png';
+import Image4 from 'assets/compare/4.png';
 import { GV } from "utils/style.util";
 import { ImageRowContainer } from "./style";
 
@@ -23,14 +26,15 @@ const RootPage: React.FC<RootPropsType> = ({
             <Flex $style={{
                 fDirection: "column",
                 vAlign: "center",
-                gap: "0.5rem"
+                gap: "0.5rem",
+                w: '40rem'
             }}>
-                <Heading level={2} $style={{
+                <Heading level={3} $style={{
                     align: "center"
-                }}>How we work</Heading>
+                }}>How it works</Heading>
                 <P $style={{
                     align: "center"
-                }}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</P>
+                }}>Unlock Your Dream Design: Personalize Your Space with Ease! Answer some simple questions, Upload a picture of your space, and Experience the Power of Design Transformation.</P>
             </Flex>
             <Flex $style={{
                 flex: "1",
@@ -43,7 +47,9 @@ const RootPage: React.FC<RootPropsType> = ({
                         fDirection: 'column',
                         gap: '0.25rem'
                     }}>
-                        <P>Original Image</P>
+                        <Span $style={{
+                            size: '0.75rem'
+                        }}>Original Image</Span>
                         <div>
                             <Image url={Image1} radius={'1rem'} width={"20rem"} />
                         </div>
@@ -52,9 +58,11 @@ const RootPage: React.FC<RootPropsType> = ({
                         fDirection: 'column',
                         gap: '0.25rem'
                     }}>
-                        <P>After Image</P>
+                        <Span $style={{
+                            size: '0.75rem'
+                        }}>After Image</Span>
                         <div>
-                            <Image url={Image1} radius={'1rem'} width={"20rem"} />
+                            <Image url={Image2} radius={'1rem'} width={"20rem"} />
                         </div>
                     </Flex>
                 </ImageRowContainer>
@@ -63,18 +71,22 @@ const RootPage: React.FC<RootPropsType> = ({
                         fDirection: 'column',
                         gap: '0.25rem'
                     }}>
-                        <P>Original Image</P>
+                        <Span $style={{
+                            size: '0.75rem'
+                        }}>Original Image</Span>
                         <div>
-                            <Image url={Image1} radius={'1rem'} width={"20rem"} />
+                            <Image url={Image3} radius={'1rem'} width={"20rem"} />
                         </div>
                     </Flex>
                     <Flex $style={{
                         fDirection: 'column',
                         gap: '0.25rem'
                     }}>
-                        <P>After Image</P>
+                        <Span $style={{
+                            size: '0.75rem'
+                        }}>After Image</Span>
                         <div>
-                            <Image url={Image1} radius={'1rem'} width={"20rem"} />
+                            <Image url={Image4} radius={'1rem'} width={"20rem"} />
                         </div>
                     </Flex>
                 </ImageRowContainer>

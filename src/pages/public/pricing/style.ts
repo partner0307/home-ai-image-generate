@@ -8,12 +8,12 @@ export const CardWrapper = styled.div`
     background: transparent;
     border: 1px solid ${GV('primary-opacity')};
     border-radius: 1rem;
-    padding: 2.5rem 2rem 1.5rem;
-    gap: 1.5rem;
+    padding: 2.5rem 1.5rem 1.5rem;
+    gap: 0.5rem;
     transition: all ease-in-out .2s;
 
     &:hover {
-        box-shadow: 0 0 10px ${GV('primary')};
+        box-shadow: 0 0px 30px ${GV('primary-opacity')};
     }
 `;
 

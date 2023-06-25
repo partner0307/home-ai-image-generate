@@ -66,7 +66,7 @@ const Signup = () => {
                 />
                 <Button $style={{
                     bg: GV("primary")
-                }}>Sign In</Button>
+                }}>Sign Up</Button>
                 <Flex $style={{
                     hAlign: 'center'
                 }}>
@@ -74,7 +74,7 @@ const Signup = () => {
                         size: '0.8rem',
                     }}>Have an account? <Link $style={{
                         color: GV('primary')
-                    }} to={'/'}>Sign up</Link>
+                    }} to={'/'}>Sign in</Link>
                     </Span>
                 </Flex>
             </ContactForm>
