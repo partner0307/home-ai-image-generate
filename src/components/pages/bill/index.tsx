@@ -29,7 +29,7 @@ const Bill: React.FC<BillPropsType> = ({ items }) => {
         <Flex $style={{
             fDirection: 'column',
             hAlign: 'center',
-            gap: '1rem'
+            gap: '0.5rem'
         }}>
             {items.map(p => <Item text={p} key={p} />)}
         </Flex>

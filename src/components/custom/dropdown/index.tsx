@@ -31,17 +31,20 @@ const Dropdown: React.FC<DropdownPropsType> = ({
 
 	React.useEffect(() => {
 		const windowClick = (e: any) => {
+
+			if (isDropdown === true) return;
+
 			if (dropdownRef !== null && dropdownRef?.current !== null) {
 				if (!dropdownRef.current.contains(e.target)) {
 					setIsDropdown(false);
 				}
 			}
-
-			window.addEventListener("click", windowClick);
-
-			return () => window.removeEventListener("click", windowClick);
 		};
-	}, []);
+
+		window.addEventListener("click", windowClick);
+
+		return () => window.removeEventListener("click", windowClick);
+	}, [isDropdown]);
 
 	return (
 		<div ref={dropdownRef} className={`dropdown ${isSm ? 'dropdown-sm' : ''}`}>
