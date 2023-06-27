@@ -20,8 +20,18 @@ export const Tile = styled.div`
     }
 `;
 
+export const DropzoneContainer = styled.div`
+    & .uploader__widget-base {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+`
+
 export const InlineText = styled.div`
     white-space: nowrap;
+    font-size: 14px;
 `
 
 export const CheckboxContainer = styled.div`

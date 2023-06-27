@@ -7,7 +7,7 @@ import { UploadDropzone } from 'react-uploader';
 import Image1 from 'assets/1.png';
 import Image2 from 'assets/2.png';
 import Image3 from 'assets/3.png';
-import { CheckboxContainer, Tile, ImageBoxWrapper, InlineText } from "./style";
+import { CheckboxContainer, Tile, ImageBoxWrapper, InlineText, DropzoneContainer } from "./style";
 import { GV } from "utils/style.util";
 import Dropdown from "components/custom/dropdown";
 
@@ -112,7 +112,7 @@ const Step1Page: React.FC<Step1PagePropsType> = ({
         <Flex $style={{
             flex: "1",
             fDirection: 'row',
-            gap: '2rem',
+            gap: '1rem',
             hAlign: 'center',
             vAlign: 'flex-start',
             overflow: "hidden",
@@ -175,23 +175,29 @@ const Step1Page: React.FC<Step1PagePropsType> = ({
                 flex: "1",
                 fDirection: 'column',
                 hAlign: "space-between",
-                gap: '1rem'
+                gap: '1rem',
+                h: "100%",
+                overflow: "hidden auto"
             }}>
                 <Flex $style={{
+                    flex: "1",
                     fDirection: 'column',
                     gap: '0.5rem'
                 }}>
                     <P>Upload the image and Design your home.</P>
-                    <UploadDropzone
-                        uploader={uploader}
-                        options={uploaderOptions}
-                        onUpdate={files => console.log(files.map(x => x.fileUrl).join("\n"))}
-                        onComplete={files => alert(files.map(x => x.fileUrl).join("\n"))}
-                        width="100%"
-                        height="190px"
-                    />
+                    <DropzoneContainer>
+                        <UploadDropzone
+                            uploader={uploader}
+                            options={uploaderOptions}
+                            onUpdate={files => console.log(files.map(x => x.fileUrl).join("\n"))}
+                            onComplete={files => alert(files.map(x => x.fileUrl).join("\n"))}
+                            width="100%"
+                            height="190px"
+                        />
+                    </DropzoneContainer>
                     <Flex $style={{
-                        fDirection: 'row',
+                        hAlign: 'space-between',
+                        fDirection: 'row',  
                         gap: '0.25rem'
                     }}>
                         <Dropdown
