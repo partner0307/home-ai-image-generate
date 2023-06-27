@@ -8,9 +8,12 @@ import Image2 from "assets/overview/2.png"
 
 import LogoImg from "assets/logo.png";
 import ReactCompareImage from "react-compare-image";
-import React from "react";
+import React, { useState } from "react";
 
 const OverviewPage = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    
     return (
         <React.Fragment>
             <Flex $style={{
@@ -67,14 +70,14 @@ Get ready for an amazing adventure with Rendro! By snapping a picture of your ro
                                 gap: "0.5rem"
                             }}>
                                 <Span>Email:</Span>
-                                <Input value="" />
+                                <Input value={email} onChange={(e: any) => setEmail(e.target.value)} />
                             </Flex>
                             <Flex $style={{
                                 fDirection: "column",
                                 gap: "0.5rem"
                             }}>
                                 <Span>Password:</Span>
-                                <Input value="" />
+                                <Input value={password} onChange={(e: any) => setPassword(e.target.value)} />
                             </Flex>
                         </Flex>
                         <Span $style={{
