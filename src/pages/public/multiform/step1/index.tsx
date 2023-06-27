@@ -141,15 +141,7 @@ const Step1Page: React.FC<Step1PagePropsType> = ({
                     <ImageBoxWrapper>
                         <Grid $style={{
                             columns: "3",
-                            gap: "0.7rem",
-                            // queries: {
-                            //     1440: {
-                            //         columns : "2"
-                            //     },
-                            //     1200: {
-                            //         columns: "1"
-                            //     }
-                            // }
+                            gap: "0.7rem"
                         }}>
                             {ImageArray.map((item, key) => (
                                 <Tile key={key}>
