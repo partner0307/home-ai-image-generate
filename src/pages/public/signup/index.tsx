@@ -6,6 +6,10 @@ import { useState } from 'react';
 
 const Signup = () => {
     const [isChecked, setIsChecked] = useState(false);
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirm, setConfirm] = useState('');
     
     return <SignupContainer>
         <Flex $style={{
@@ -24,28 +28,28 @@ const Signup = () => {
                         gap: "0.5rem"
                     }}>
                         <Span>Full Name:</Span>
-                        <Input value="" />
+                        <Input value={name} onChange={(e: any) => setName(e.target.value)} />
                     </Flex>
                     <Flex $style={{
                         fDirection: "column",
                         gap: "0.5rem"
                     }}>
                         <Span>Email:</Span>
-                        <Input value="" />
+                        <Input value={email} onChange={(e: any) => setEmail(e.target.value)} />
                     </Flex>
                     <Flex $style={{
                         fDirection: "column",
                         gap: "0.5rem"
                     }}>
                         <Span>Password:</Span>
-                        <Input value="" />
+                        <Input value={password} onChange={(e: any) => setPassword(e.target.value)} />
                     </Flex>
                     <Flex $style={{
                         fDirection: "column",
                         gap: "0.5rem"
                     }}>
                         <Span>Confirm:</Span>
-                        <Input value="" />
+                        <Input value={confirm} onChange={(e: any) => setConfirm(e.target.value)} />
                     </Flex>
                 </Flex>
                 <Checkbox
