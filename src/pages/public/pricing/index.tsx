@@ -10,7 +10,7 @@ import Bill from "components/pages/bill";
 import { Button } from "components/custom";
 
 const questions1 = [
-    'Up to 5 Projects',
+    'Up to 10 Projects',
     'Style Calculation',
     '8 hours Support',
     'Real Measurement',
@@ -21,7 +21,7 @@ const questions1 = [
 ]
 
 const questions2 = [
-    'Up to 5 Projects',
+    'Up to 100 Projects',
     'Style Calculation',
     '8 hours Support',
     'Real Measurement',
@@ -33,7 +33,7 @@ const questions2 = [
 ];
 
 const questions3 = [
-    'Up to 5 Projects',
+    'Unlimited Projects',
     'Style Calculation',
     '8 hours Support',
     'Real Measurement',

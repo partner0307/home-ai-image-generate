@@ -29,17 +29,56 @@ type Step1PagePropsType = {
     next2: any
 }
 
+export type themeType =
+  | "Modern"
+  | "Vintage"
+  | "Minimalist"
+  | "Professional"
+  | "Tropical"
+  | "Industrial"
+  | "Neoclassic";
+
+export type roomType =
+  | "Living Room"
+  | "Dining Room"
+  | "Bedroom"
+  | "Bathroom"
+  | "Office"
+  | "Kitchen"
+  | "Basement"
+  | "Outdoor Patio"
+  | "Gaming Room";
+
+export const themes: themeType[] = [
+  "Modern",
+  "Minimalist",
+  "Professional",
+  "Tropical",
+  "Vintage",
+  "Industrial",
+  "Neoclassic",
+];
+
+export const rooms: roomType[] = [
+  "Living Room",
+  "Dining Room",
+  "Office",
+  "Bedroom",
+  "Bathroom",
+  "Basement",
+  "Kitchen",
+  "Gaming Room",
+  "Outdoor Patio",
+];
+
 const questions = [
     '1. Which couch would you prefer to snuggle up on ?',
-    '2. Which couch would you prefer to snuggle up on ?',
-    '3. Which couch would you prefer to snuggle up on ?',
-    '4. Which couch would you prefer to snuggle up on ?',
-    '5. Which couch would you prefer to snuggle up on ?',
-    '6. Which couch would you prefer to snuggle up on ?',
-    '7. Which couch would you prefer to snuggle up on ?',
-    '8. Which couch would you prefer to snuggle up on ?',
-    '9. Which couch would you prefer to snuggle up on ?',
-    '10. Which couch would you prefer to snuggle up on ?',
+    '2. Which living room do you find most comfortable to spend your time in ?',
+    '3. Which kitchen do you envision using to prepare your favorite dishes ?',
+    '4. Which bedroom would you prefer to wake up in every morning ?',
+    '5. Which bathroom would you choose to unwind in after a tiring day ?',
+    '6. Which of these houses catches your eye the most from the street ?',
+    '7. Which of these pictures do you vibe with the most ?',
 ];
 
 const ImageArray = [
@@ -94,18 +133,33 @@ const Step1Page: React.FC<Step1PagePropsType> = ({
     const [walls, setWalls] = useState(false);
     const [furniture, setFurniture] = useState(false);
     const [lighting, setLighting] = useState(false);
+    const [list, setList] = useState<any[]>([]);
 
     const handleNext = () => {
         setQuizIndex(quizIndex + 1);
-
-        if(quizIndex + 1 >= 9)
+        setCheckList(Array(ImageArray.length).fill(false));
+        if(quizIndex + 1 >= 6)
             next1();
+    }
+
+    const handleBack = () => {
+        if(quizIndex > 0) {
+            setQuizIndex(quizIndex - 1);
+            let temp = [...checkList];
+            temp[list[quizIndex - 1]] = true;
+            setCheckList((prev) => temp);
+        }
     }
 
     const checkImage = (index: number) => {
         let temp = [...checkList];
         temp[index] = !temp[index];
         setCheckList((prev) => temp);
+        setList([...list, index]);
+        setTimeout(() => {
+            handleNext();
+            setCheckList(Array(ImageArray.length).fill(false));
+        }, 500);
     }
 
     return (
@@ -158,8 +212,8 @@ const Step1Page: React.FC<Step1PagePropsType> = ({
                         hAlign: 'space-between',
                         w: '100%'
                     }}>
-                        <Button $style={{bg: GV('dark')}} disabled={quizIndex <= 0 ? true : false} onClick={() => setQuizIndex(quizIndex - 1)}>Back</Button>
-                        <Button $style={{bg: quizIndex >= 9 ? GV('dark') : GV('primary')}} disabled={quizIndex >= 9 ? true : false} onClick={handleNext}>Next</Button>
+                        <Button $style={{bg: GV('dark')}} disabled={quizIndex <= 0 ? true : false} onClick={handleBack}>Back</Button>
+                        <Button $style={{bg: quizIndex >= 6 ? GV('dark') : GV('primary')}} disabled={quizIndex >= 6 ? true : false} onClick={handleNext}>Next</Button>
                     </Flex>
                 </Flex>
             </Flex>
@@ -197,12 +251,9 @@ const Step1Page: React.FC<Step1PagePropsType> = ({
                                 <Flex as={"ul"} $style={{
                                     fDirection: "column"
                                 }}>
-                                    <Span as={"li"} $style={{
+                                    {themes.map((p) => <Span as={"li"} $style={{
                                         color: GV("bg")
-                                    }}>Item 1</Span>
-                                    <Span as={"li"} $style={{
-                                        color: GV("bg")
-                                    }}>Item 2</Span>
+                                    }}>{p}</Span>)}
                                 </Flex>
                             )}
                             initialLabel="Choose your room type"
@@ -212,12 +263,9 @@ const Step1Page: React.FC<Step1PagePropsType> = ({
                                 <Flex as={"ul"} $style={{
                                     fDirection: "column"
                                 }}>
-                                    <Span as={"li"} $style={{
+                                    {rooms.map((p) => <Span as={"li"} $style={{
                                         color: GV("bg")
-                                    }}>Item 1</Span>
-                                    <Span as={"li"} $style={{
-                                        color: GV("bg")
-                                    }}>Item 2</Span>
+                                    }}>{p}</Span>)}
                                 </Flex>
                             )}
                             initialLabel="Choose your interior style"
@@ -343,8 +391,8 @@ const Step1Page: React.FC<Step1PagePropsType> = ({
                     fDirection: "column"
                 }}>
                     <Button $style={{
-                        bg: quizIndex < 9 ? GV('primary-opacity') : GV('primary')
-                    }} disabled={quizIndex < 9 ? true : false} onClick={() => {next2()}}>Generate Your Home</Button>
+                        bg: quizIndex < 6 ? GV('primary-opacity') : GV('primary')
+                    }} disabled={quizIndex < 6 ? true : false} onClick={() => {next2()}}>Generate Your Home</Button>
                 </Flex>
             </Flex>
             {/* <Button onClick={next}>Next</Button> */}
