@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { GV } from "../../../utils/style.util";
 
 export type StylePropsType = {
     w?: string
