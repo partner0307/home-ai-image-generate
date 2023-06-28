@@ -9,7 +9,7 @@ import Price from "components/pages/price";
 import Bill from "components/pages/bill";
 import { Button } from "components/custom";
 
-const questions = [
+const questions1 = [
     'Up to 5 Projects',
     'Style Calculation',
     '8 hours Support',
@@ -17,8 +17,32 @@ const questions = [
     'Changing Colors/Filtering',
     'Design Recommendation',
     'Review Panel',
-    'VR / AR'
+    'VR/AR'
 ]
+
+const questions2 = [
+    'Up to 5 Projects',
+    'Style Calculation',
+    '8 hours Support',
+    'Real Measurement',
+    'Limited Changes & Filtering',
+    'Limited Recommendations',
+    'Review Panel',
+    'Basic VR/AR',
+    'E-Meeting a Designer'
+];
+
+const questions3 = [
+    'Up to 5 Projects',
+    'Style Calculation',
+    '8 hours Support',
+    'Real Measurement',
+    'Changing Colors/Filtering',
+    'Design Recommendation',
+    'Review Panel',
+    'VR/AR & Modification',
+    'E-Meeting with a Designer'
+];
 
 const PricingPage = () => {
     return (
@@ -51,9 +75,16 @@ const PricingPage = () => {
                 }
             }}>
                 <CardWrapper>
-                    <CustomHeading logo={LogoImg1} title="BASIC" description="Recommended subscription model" />
-                    <Price price={9.99} />
-                    <Bill items={questions} />
+                    <Flex $style={{
+                        fDirection: 'column',
+                        gap: '0.5rem',
+                        hAlign: 'flex-start',
+                        vAlign: 'center'
+                    }}>
+                        <CustomHeading logo={LogoImg1} title="BASIC" description="Recommended subscription model" />
+                        <Price price={'FREE'} />
+                        <Bill items={questions1} />
+                    </Flex>
                     <Flex $style={{
                         hAlign: "center"
                     }}>
@@ -66,7 +97,7 @@ const PricingPage = () => {
                 <CardWrapper>
                     <CustomHeading logo={LogoImg2} title="STANDARD" description="Recommended subscription model" />
                     <Price price={19.99} />
-                    <Bill items={questions} />
+                    <Bill items={questions2} />
                     <Flex $style={{
                         hAlign: "center"
                     }}>
@@ -78,7 +109,7 @@ const PricingPage = () => {
                 <CardWrapper>
                     <CustomHeading logo={LogoImg1} title="PREMIUM" description="Recommended subscription model" />
                     <Price price={199.99} />
-                    <Bill items={questions} />
+                    <Bill items={questions3} />
                     <Flex $style={{
                         hAlign: "center"
                     }}>

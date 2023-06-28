@@ -4,12 +4,14 @@ import { GV } from 'utils/style.util';
 export const CardWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     background: transparent;
     border: 1px solid ${GV('primary-opacity')};
     border-radius: 1rem;
     padding: 2.5rem 1.5rem 1.5rem;
     gap: 0.5rem;
+    height: 100%;
     transition: all ease-in-out .2s;
 
     &:hover {

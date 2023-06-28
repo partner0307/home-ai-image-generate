@@ -3,7 +3,7 @@ import React from 'react';
 import { GV } from 'utils/style.util';
 
 type PricePropsType = {
-    price?: number
+    price?: number | string
 }
 
 const Price: React.FC<PricePropsType> = ({ price }) => {
@@ -18,8 +18,9 @@ const Price: React.FC<PricePropsType> = ({ price }) => {
                 vAlign: 'center',
                 gap: '0.5rem'
             }}>
-                <Heading level={2}>${price}</Heading>
-                <P>/month</P>
+                {price !== 'FREE' ? <><Heading level={2}>${price}</Heading>
+                <P>/month</P></>
+                : <Heading level={2}>FREE</Heading>}
             </Flex>
             <Flex $style={{
                 fDirection: 'column',

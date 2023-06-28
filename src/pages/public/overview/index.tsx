@@ -53,9 +53,9 @@ const OverviewPage = () => {
                                 <Heading level={1}>Imagine Design Feel Good</Heading>
                                 <P>
 Get ready for an amazing adventure with Rendro! By snapping a picture of your room, this incredible app reveals your personal style and creates stunning pictures of your space that will leave you amazed.</P>
-                                <Button $style={{
+                                <Link to="/how-work"><Button $style={{
                                     bg: GV("primary")
-                                }}>Get Started</Button>
+                                }}>Get Started</Button></Link>
                             </Flex>
                         </HomeTitle>
                     </Flex>
