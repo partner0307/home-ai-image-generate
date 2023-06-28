@@ -19,11 +19,11 @@ const OverviewPage = () => {
             <Flex $style={{
                 flex: "1",
                 fDirection: "column",
-                gap: "2rem",
+                gap: "1rem",
                 h: "100%"
             }}>
                 <Flex $style={{
-                    gap: "2rem",
+                    gap: "1rem",
                     hAlign: "space-between",
                     queries: {
                         768: {
@@ -34,7 +34,7 @@ const OverviewPage = () => {
                     <Flex $style={{
                         fDirection: "column",
                         hAlign: "space-between",
-                        gap: "2rem"
+                        gap: "1rem"
                     }}>
                         <LogoWrapper>
                             <img src={LogoImg} height={'100%'} alt="" />
@@ -43,7 +43,7 @@ const OverviewPage = () => {
                             <Flex $style={{
                                 fDirection: "column",
                                 vAlign: "flex-start",
-                                gap: "2rem",
+                                gap: "1rem",
                                 queries: {
                                     768: {
                                         vAlign: 'center'
