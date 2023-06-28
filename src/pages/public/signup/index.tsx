@@ -1,4 +1,4 @@
-import { Flex, Link, P, Span } from 'components/basic';
+import { Flex, Link, Span } from 'components/basic';
 import { Button, Checkbox, Input } from 'components/custom';
 import { GV } from 'utils/style.util';
 import { ContactForm, InlineText, SignupContainer } from './style';
